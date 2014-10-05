@@ -6,8 +6,9 @@ Languagecheck::Application.routes.draw do
 
   resources :questions do
     resources :answers
-    resources :comments
   end
+
+  resources :comments
   
   get 'about' => 'welcome#about'
   root to: 'welcome#index' 
