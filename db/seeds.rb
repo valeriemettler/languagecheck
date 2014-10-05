@@ -1,23 +1,24 @@
 require 'faker'
 
 # Create Users
-# 5.times do
-#   user = User.new(
-#     name:     Faker::Name.name,
-#     email:    Faker::Internet.email,
-#     password: Faker::Lorem.characters(10)
-#   )
-#   user.skip_confirmation!
-#   user.save
-# end
-# users = User.all
-user = User.new(
-   name:     'Member User',
-   email:    'valeriemettler@yahoo.com',
-   password: 'helloworld'
+5.times do
+  user = User.new(
+    name:     Faker::Name.name,
+    email:    Faker::Internet.email,
+    password: Faker::Lorem.characters(10)
   )
   user.skip_confirmation!
   user.save
+end
+users = User.all
+
+# user = User.new(
+#    name:     'Member User',
+#    email:    'valeriemettler@yahoo.com',
+#    password: 'helloworld'
+#   )
+#   user.skip_confirmation!
+#   user.save
 
 # users = User.all
 
@@ -60,16 +61,16 @@ end
 answers = Answer.all
 
  # Create Comments
-10.times do
-  Comment.create(
-    # user: users.sample, 
-    # question: questions.sample,
-    body: Faker::Lorem.paragraph
-  )
+# 10.times do
+#   Comment.create(
+#     # user: users.sample, 
+#     # question: questions.sample,
+#     body: Faker::Lorem.paragraph
+#   )
 
-   # set the created_at to a time within the past year
-   # comment.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
-end
+#    # set the created_at to a time within the past year
+#    # comment.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+# end
 
 # Create an admin user
  # admin = User.new(
@@ -99,11 +100,16 @@ end
  # )
  # member.skip_confirmation!
  # member.save
+ User.first.update_attributes!(
+  name:     'Valerie',
+  email:    'valeriemettler@yahoo.com',
+  password: 'helloworld'
+)
 
 
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Language.count} languages created"
-puts "#{Question.count} question created"
+puts "#{Question.count} questions created"
 puts "#{Answer.count} answers created"
-puts "#{Comment.count} comments created"
+# puts "#{Comment.count} comments created"
