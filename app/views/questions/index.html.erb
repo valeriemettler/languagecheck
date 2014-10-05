@@ -1,12 +1,26 @@
 <h1>My Questions</h1>
+   <div>
+      <%= link_to "Ask a New Question", new_question_path, class: 'btn btn-success' %>
+  </div>
+<% @questions.each do |question| %>
+   <div class="media">
+     <div class="media-body">
+       <h4 class="media-heading">
+<p><%= link_to question.body, question %></p>
+      </h4>
+     </div>
+   </div>
+<% end %>
 
+
+<!-- 
 <table>
 
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= link_to question.body, question_path(question.id) %></td>
+        <td><%= link_to question.body, question %></td>
        
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -17,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path %> -->
