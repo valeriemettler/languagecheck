@@ -6,10 +6,10 @@
    <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
-<p><%= link_to question.body, question %></p>
+<p><%= question.language ? link_to(question.body, [question.language, question]) : question.body %></p>
       </h4>
       <small>
-         submitted <%= time_ago_in_words(question.created_at) %> ago by <%= question.user.name %> <br/>
+         submitted <%= time_ago_in_words(question.created_at) %> ago by User <br/>
          <%= question.answers.count %> Answers
        </small>
      </div>
@@ -17,22 +17,3 @@
 <% end %>
 
 
-<!-- 
-<table>
-
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.body, question %></td>
-       
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %> -->

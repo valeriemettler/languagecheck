@@ -53,6 +53,8 @@ gem 'devise'
 gem 'faker'
 gem 'figaro'
 gem 'pundit'
+gem 'elasticsearch', '~> 1.0.5'
+gem 'obscenity'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

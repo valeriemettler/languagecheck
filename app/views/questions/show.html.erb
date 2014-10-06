@@ -8,6 +8,7 @@
     <% if policy(@question).edit? %>
       <%= link_to "Edit", edit_language_question_path(@language, @question), class: 'btn btn-success' %>
     <% end %>
+    <%= link_to "Answer", new_language_question_answer_path(@language, @question), class: 'btn btn-success' %>
   </div>
 </div>
 
@@ -17,9 +18,9 @@
 
 <!-- <h1>My Question</h1>
 
-<% if policy(@question).edit? %>
-<%= link_to "Edit", edit_question_path(@question), class: 'btn btn-success' %>
-<% end %>
+<%# if policy(@question).edit? %>
+<%#= link_to "Edit", edit_question_path(@question), class: 'btn btn-success' %>
+<%# end %>
 
-<p><%= @question.body %></p> -->
+<p><%#= @question.body %></p> -->
 

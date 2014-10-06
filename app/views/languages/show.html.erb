@@ -3,7 +3,7 @@
 
 <div>
 <% if policy(@language).create? %>
-  <%= link_to "Ask a New Question", new_question_path, class: 'btn btn-success' %>
+  <%= link_to "Ask a New Question", new_language_question_path(@language), class: 'btn btn-success' %>
 <% end %>
 </div>
 <br/>
