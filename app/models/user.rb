@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :comments
   #has_many :votes
+
+  def role?(base_role)
+   role == base_role.to_s
+  end
+
 end

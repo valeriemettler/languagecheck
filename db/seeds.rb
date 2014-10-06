@@ -72,15 +72,15 @@ answers = Answer.all
 #    # comment.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
 # end
 
-# Create an admin user
- # admin = User.new(
- #  name:  'Admin User',
- #  email: 'valeriemettler@gmail.com',
- #  password: 'helloworld',
- # role:     'admin'
- # )
- # admin.skip_confirmation!
- # admin.save
+#Create an admin user
+ admin = User.new(
+  name:  'Admin User',
+  email: 'valeriemettler@gmail.com',
+  password: 'helloworld',
+ role:     'admin'
+ )
+ admin.skip_confirmation!
+ admin.save
  
  # Create a moderator
  # moderator = User.new(
@@ -93,18 +93,14 @@ answers = Answer.all
  # moderator.save
  
  # Create a member
- # member = User.new(
- #   name:     'Member User',
- #   email:    'valeriemettler@yahoo.com',
- #   password: 'helloworld',
- # )
- # member.skip_confirmation!
- # member.save
- User.first.update_attributes!(
-  name:     'Valerie',
-  email:    'valeriemettler@yahoo.com',
-  password: 'helloworld'
-)
+ member = User.new(
+   name:     'Member User',
+   email:    'valeriemettler@yahoo.com',
+   password: 'helloworld',
+ )
+ member.skip_confirmation!
+ member.save
+
 
 
 puts "Seed finished"

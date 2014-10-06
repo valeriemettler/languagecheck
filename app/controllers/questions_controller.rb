@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    # authorize @question
   end
 
   def show
@@ -11,14 +12,17 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    authorize @question
   end
 
   def edit
     @question = Question.find(params[:id])
+    authorize @question
   end
 
   def update
      @question = Question.find(params[:id])
+     authorize @question
      if @question.update_attributes(params.require(:question).permit(:body))
        flash[:notice] = "Question was updated."
        redirect_to @question
@@ -30,6 +34,7 @@ class QuestionsController < ApplicationController
 
   def create
      @question = Question.new(params.require(:question).permit(:body))
+     authorize @question
      if @question.save
        flash[:notice] = "Question was saved."
        redirect_to @question

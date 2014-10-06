@@ -2,13 +2,15 @@ Languagecheck::Application.routes.draw do
   devise_for :users
   resources :users
   
-  resources :languages
+  resources :languages do
+    resources :questions
+   end
 
   resources :questions do
     resources :answers
   end
 
-  resources :comments
+  #resources :comments
   
   get 'about' => 'welcome#about'
   root to: 'welcome#index' 
