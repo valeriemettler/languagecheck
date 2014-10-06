@@ -1,20 +1,24 @@
-<h1>Listing languages</h1>
+<h1>Languages</h1>
 
-<table>
-
-
-  <tbody>
-    <% @languages.each do |language| %>
-      <tr>
-        <td><%= link_to language.name, language_path(language.id) %></td>
-        
-        <td><%= link_to 'Edit', edit_language_path(language) %></td>
-        <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div>
+    <% if policy(Language.new).create? %>
+      <%= link_to "Add a Language", new_language_path, class: 'btn btn-success' %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<br/>
+<div class="row">
+  <div class="col-md-8">
+    <% @languages.each do |language| %>
+       <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+        <%= link_to language.name, language %>
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<br>
+</div>
 
-<%= link_to 'New Language', new_language_path %>
+

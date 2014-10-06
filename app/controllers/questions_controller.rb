@@ -8,21 +8,26 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @language = Language.find(params[:language_id])
   end
 
   def new
+    # @language = Language.find(params[:language_id])
     @question = Question.new
     authorize @question
   end
 
   def edit
+    @language = Language.find(params[:language_id])
     @question = Question.find(params[:id])
     authorize @question
   end
 
   def update
+    @language = Language.find(params[:language_id])
      @question = Question.find(params[:id])
      authorize @question
+     
      if @question.update_attributes(params.require(:question).permit(:body))
        flash[:notice] = "Question was updated."
        redirect_to @question
@@ -33,8 +38,11 @@ class QuestionsController < ApplicationController
    end
 
   def create
+    @language = Language.find(params[:language_id])
      @question = Question.new(params.require(:question).permit(:body))
+     @question.language = @language
      authorize @question
+
      if @question.save
        flash[:notice] = "Question was saved."
        redirect_to @question

@@ -3,7 +3,7 @@ Languagecheck::Application.routes.draw do
   resources :users
   
   resources :languages do
-    resources :questions
+    resources :questions, except: [:index]
    end
 
   resources :questions do

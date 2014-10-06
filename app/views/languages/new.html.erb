@@ -1,5 +1,12 @@
-<h1>New language</h1>
+<h1>Add a Language</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', languages_path %>
+ <div class="col-md-4">
+    <%= form_for @language do |f| %>
+      <div class="form-group">
+        <% f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter language name here" %>
+      </div>
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>

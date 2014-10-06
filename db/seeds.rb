@@ -1,7 +1,7 @@
 require 'faker'
 
 # Create Users
-5.times do
+15.times do
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
@@ -23,18 +23,18 @@ users = User.all
 # users = User.all
 
  # Create Languages
- 15.times do
-   Language.create(
-     name:   Faker::Lorem.sentence,
+ 10.times do
+   Language.create!(
+     name:   Faker::Lorem.word,
    )
  end
  languages = Language.all
 
 # Create Questions
-15.times do
+5.times do
    question = Question.create(
-    # user:   users.sample,
-    # language: languages.sample,
+    user:   users.sample,
+    language: languages.sample,
     body:   Faker::Lorem.paragraph
   )
   
@@ -46,10 +46,10 @@ end
 questions = Question.all
  
 # Create Answers
-15.times do
-   answer = Answer.create(
-    # user:   users.sample,
-    # question: questions.sample,
+5.times do
+   answer = Answer.create!(
+    #user:   users.sample,
+    question: questions.sample,
     body:   Faker::Lorem.paragraph
   )
   
