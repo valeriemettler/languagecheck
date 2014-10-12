@@ -8,7 +8,7 @@ Languagecheck::Application.routes.draw do
     end
    end
 
-  resources :questions, only: [:index, :new]
+  resources :questions, only: [:index, :new, :create]
 
   #resources :comments
   

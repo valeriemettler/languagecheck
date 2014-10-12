@@ -1,13 +1,8 @@
-<h1>Languages</h1>
 
-  <div>
-    <% if policy(Language.new).create? %>
-      <%= link_to "Add a Language", new_language_path, class: 'btn btn-success' %>
-    <% end %>
-  </div>
-<br/>
+
 <div class="row">
   <div class="col-md-8">
+    <h3>Languages</h3>
     <% @languages.each do |language| %>
        <div class="media">
         <div class="media-body">
@@ -18,6 +13,14 @@
       </div>
     <% end %>
   </div>
+<br/>
+<br/>
+ <div class="col-md-4">
+    <% if policy(Language.new).create? %>
+      <%= link_to "Add a Language", new_language_path, class: 'btn btn-success' %>
+    <% end %>
+  </div>
+
 
 </div>
 
