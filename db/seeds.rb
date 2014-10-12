@@ -25,7 +25,7 @@ users = User.all
  # Create Languages
  10.times do
    Language.create!(
-     name:   Faker::Lorem.word,
+     name:   Faker::Lorem.characters(10),
    )
  end
  languages = Language.all
@@ -35,7 +35,7 @@ users = User.all
    question = Question.create(
     user:   users.sample,
     language: languages.sample,
-    body:   Faker::Lorem.paragraph
+    body:   Faker::Lorem.words(4)
   )
   
    # set the created_at to a time within the past year
@@ -48,9 +48,9 @@ questions = Question.all
 # Create Answers
 5.times do
    answer = Answer.create!(
-    #user:   users.sample,
+    user:   users.sample,
     question: questions.sample,
-    body:   Faker::Lorem.paragraph
+    body:   Faker::Lorem.sentence
   )
   
    # set the created_at to a time within the past year

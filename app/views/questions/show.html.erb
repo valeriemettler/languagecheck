@@ -13,14 +13,9 @@
 </div>
 
 
+<% @question.answers.each do |answer| %>
+  <%= simple_format answer.body %>
+<% end %>
 
-
-
-<!-- <h1>My Question</h1>
-
-<%# if policy(@question).edit? %>
-<%#= link_to "Edit", edit_question_path(@question), class: 'btn btn-success' %>
-<%# end %>
-
-<p><%#= @question.body %></p> -->
-
+<h2>Add an Answer</h2>
+<%= render "answers/form" %>

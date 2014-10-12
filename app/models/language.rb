@@ -1,8 +1,10 @@
 class Language < ActiveRecord::Base
+  require 'obscenity/active_model'
   has_many :questions
 
-  # default_scope { order('rank DESC')  ##what is the equivalent for ranking in alphabetical order?
+  default_scope { order('languages.name ASC') }
 
-  # validates :name, length: { minimum: 3, maximum: 15 }, presence: true
+  validates :name, obscenity: true
+  validates :name, length: { minimum: 3, maximum: 15 }, presence: true
 
 end

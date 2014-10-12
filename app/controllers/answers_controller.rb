@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
   before_action :set_language_and_question
+  before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
   # GET /answers.json
@@ -34,7 +34,7 @@ class AnswersController < ApplicationController
         format.html { redirect_to [@language, @question], notice: 'Answer was successfully created.' }
         format.json { render action: 'show', status: :created, location: @answer }
       else
-        format.html { redirect_to [@language, @question], error: 'Answer was not successfully created.' }
+        format.html { redirect_to [@language, @question], error: 'Answer was  not successfully created.' }
         format.json { render json: @answer.errors, status: :unprocessable_entity }
       end
     end
@@ -68,11 +68,13 @@ class AnswersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_answer
       @answer = Answer.find(params[:id])
+      @answer ||= @question.answers.new
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def answer_params
-      params.require(:answer).permit(:body)
+
+     def answer_params
+      params.require(:answer).permit(:id, :body)
     end
 
     def set_language_and_question
