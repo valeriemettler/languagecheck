@@ -16,9 +16,11 @@
             <%= link_to question.body, [@language, question] %>
           </h4>
           <small>
-         submitted <%= time_ago_in_words(question.created_at) %> ago by <%= question.user.name %> <br/>
-         <%= question.answers.count %> Answers
-       </small>
+             <%= image_tag(question.user.avatar.tiny.url) if question.user.avatar? %>
+             submitted <%= time_ago_in_words(question.created_at) %> ago by
+             <%= question.user.name %><br/>
+             <%= question.answers.count %> Answers
+           </small>
         </div>
       </div>
     <% end %>

@@ -1,16 +1,14 @@
-<h1>User Rankings</h1>
+ <div class="row">
+   <div class="col-md-8">
+     <h1>User Rankings</h1>
+     <p class="lead">Most active users</p>
+     <%= render partial: 'users/user', collection: @users %>
+   </div>
+   <div class="col-md-4">
+   </div>
+ </div>
 
-<table>
 
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user_path(user.id) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 

@@ -1,3 +1,14 @@
+<% if @question.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>Please fix <%= pluralize(@question.errors.count, "error") %>.</h4>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <h1>New Question</h1>
 
 <div class="row">
