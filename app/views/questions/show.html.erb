@@ -12,14 +12,29 @@
   </div>
   <div class="col-md-4">
     <% if policy(@question).edit? %>
-      <%= link_to "Edit", edit_language_question_path(@language, @question), class: 'btn btn-success' %>
+      <%= link_to "Edit Question", edit_language_question_path(@language, @question), class: 'btn btn-success' %>
     <% end %>
-    <%= link_to "Answer", new_language_question_answer_path(@language, @question), class: 'btn btn-success' %>
+    <%#= link_to "Answer", new_language_question_answer_path(@language, @question), class: 'btn btn-success' %>
   </div>
 </div>
 <br/>
 <h3>Answers</h3>
     <% @question.answers.each do |answer| %>
+
+<%#= render partial: 'votes/voter', locals: { answer: @answer } %>
+
+<!-- <div>
+     <h3> -->
+      <%#= pluralize(@answer.points, 'point') %>
+    <!--  </h3>
+     <small> -->
+       <%#= pluralize(@answer.up_votes, 'up vote') %>
+       
+       <%#= pluralize(@answer.down_votes, 'down vote') %>
+  <!--    </small>
+   </div> -->
+
+
       <%= simple_format answer.body %>
         <small>
        <%= image_tag(answer.user.avatar.tiny.url) if answer.user.avatar? %>

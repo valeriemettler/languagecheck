@@ -5,6 +5,12 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = current_user.questions
+    @unanswered_questions = @questions.select(&:unanswered)
+    @answered_questions = @questions.select(&:answered)
+
+    @answers = current_user.answers
+    @questions_i_answered = @answers.collect(&:question).uniq || []
+    @answers_voted_up = @answers.voted_up || []
     # authorize @question
   end
 

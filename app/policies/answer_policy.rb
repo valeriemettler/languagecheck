@@ -1,7 +1,4 @@
-class QuestionPolicy < ApplicationPolicy
-  def index?
-    true
-  end
+class AnswerPolicy < ApplicationPolicy
 
   # def destroy?
   #   user.present? && (record.user == user || user.role?(:admin) || user.role?(:moderator))

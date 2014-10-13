@@ -6,10 +6,18 @@ class Question < ActiveRecord::Base
   belongs_to :language
 
   default_scope { order('created_at DESC') }
-
   
   validates :body, obscenity: true
   validates :body, length: { minimum: 10, maximum: 160 }, presence: true
-  validates :user, presence: true
+  #validates :user, presence: truescope :unanswered, -> { joins(:answers)  }
+
+  def unanswered
+    answers.blank?
+  end
+
+  def answered
+    answers.any?
+  end
+
 
 end
