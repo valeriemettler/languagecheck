@@ -9,7 +9,7 @@ class Question < ActiveRecord::Base
   
   validates :body, obscenity: true
   validates :body, length: { minimum: 10, maximum: 160 }, presence: true
-  #validates :user, presence: truescope :unanswered, -> { joins(:answers)  }
+  #validates :user, presence: true
 
   def unanswered
     answers.blank?
