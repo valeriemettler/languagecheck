@@ -18,6 +18,4 @@ class Question < ActiveRecord::Base
   def answered
     answers.any?
   end
-
-
 end

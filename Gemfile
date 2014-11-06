@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
 
@@ -8,18 +7,17 @@ group :development, :test do
   gem 'capybara'
 end
 
-
- group :production do
-   gem 'pg'
-   gem 'rails_12factor'
-   gem 'unicorn'
- end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
  
- group :development do
-   gem 'sqlite3'
-   gem 'better_errors'
-   gem "binding_of_caller"
- end
+group :development do
+  gem 'sqlite3'
+  gem 'better_errors'
+  gem "binding_of_caller"
+end
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
@@ -66,7 +64,6 @@ gem 'fog'
 
 # Use unicorn as the app server
  
-
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

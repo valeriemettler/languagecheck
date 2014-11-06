@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
   before_action :set_language, except: [:index, :new]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @questions = current_user.questions
     @unanswered_questions = @questions.select(&:unanswered)
@@ -11,29 +10,24 @@ class QuestionsController < ApplicationController
     @answers = current_user.answers
     @questions_i_answered = @answers.collect(&:question).uniq || []
     @answers_voted_up = @answers.voted_up || []
-    # authorize @question
   end
 
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
-    # @language = Language.find(params[:language_id])
   end
 
   def new
-    # @language = Language.find(params[:language_id])
     @question = Question.new
     authorize @question
   end
 
   def edit
-    # @language = Language.find(params[:language_id])
     @question = Question.find(params[:id])
     authorize @question
   end
 
   def update
-    # @language = Language.find(params[:language_id])
      @question = Question.find(params[:id])
      authorize @question
      
@@ -44,10 +38,9 @@ class QuestionsController < ApplicationController
        flash[:error] = "There was an error saving the question. Please try again."
        render :edit
      end
-   end
+  end
 
   def create
-    # @language = Language.find(params[:language_id])
      @question = Question.new(question_params)
      @question.language = @language
      @question.user = current_user
@@ -64,6 +57,7 @@ class QuestionsController < ApplicationController
        render :new
      end
    end
+
   def destroy
     @question.destroy.find(params[:id])
     respond_to do |format|
@@ -86,5 +80,4 @@ class QuestionsController < ApplicationController
     def set_language
       @language = Language.find(params[:language_id])
     end
-  
 end

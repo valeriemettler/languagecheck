@@ -6,5 +6,4 @@ class Language < ActiveRecord::Base
 
   validates :name, obscenity: true
   validates :name, length: { minimum: 3, maximum: 15 }, presence: true
-  
 end

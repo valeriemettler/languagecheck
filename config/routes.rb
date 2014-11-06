@@ -1,5 +1,4 @@
 Languagecheck::Application.routes.draw do
-
   devise_for :users
   resources :users
   
@@ -12,7 +11,6 @@ Languagecheck::Application.routes.draw do
    end
 
   resources :questions, only: [:index, :new, :create]
-
   #resources :comments
   
   get 'about' => 'welcome#about'

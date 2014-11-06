@@ -1,11 +1,11 @@
 <%= form_for [@language, @question, @answer] do |f| %>
-  
-  <div class="field">
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.text_area :body %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
 
 <% if @answer.errors.any? %>
@@ -17,4 +17,4 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>

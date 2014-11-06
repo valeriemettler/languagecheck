@@ -22,52 +22,47 @@ users = User.all
 
 # users = User.all
 
- # Create Languages
- 10.times do
-   Language.create!(
-     name:   Faker::Lorem.characters(10),
+# Create Languages
+10.times do
+  Language.create!(
+  name:   Faker::Lorem.characters(10),
    )
- end
- languages = Language.all
+end
+languages = Language.all
 
 # Create Questions
 5.times do
-   question = Question.create(
-    user:   users.sample,
-    language: languages.sample,
-    body:   Faker::Lorem.words(4)
+  question = Question.create(
+  user:   users.sample,
+  language: languages.sample,
+  body:   Faker::Lorem.words(4)
   )
-  
-   # set the created_at to a time within the past year
-   # question.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
-   # question.update_rank
-
+  # set the created_at to a time within the past year
+  # question.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+  # question.update_rank
 end
 questions = Question.all
  
 # Create Answers
 5.times do
-   answer = Answer.create!(
-    user:   users.sample,
-    question: questions.sample,
-    body:   Faker::Lorem.sentence
+  answer = Answer.create!(
+  user:   users.sample,
+  question: questions.sample,
+  body:   Faker::Lorem.sentence
   )
-  
-   # set the created_at to a time within the past year
-   # question.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
-   # question.update_rank
-
+  # set the created_at to a time within the past year
+  # question.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+  # question.update_rank
 end
 answers = Answer.all
 
- # Create Comments
+# Create Comments
 # 10.times do
 #   Comment.create(
 #     # user: users.sample, 
 #     # question: questions.sample,
 #     body: Faker::Lorem.paragraph
 #   )
-
 #    # set the created_at to a time within the past year
 #    # comment.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
 # end
@@ -100,8 +95,6 @@ answers = Answer.all
  )
  member.skip_confirmation!
  member.save
-
-
 
 puts "Seed finished"
 puts "#{User.count} users created"
