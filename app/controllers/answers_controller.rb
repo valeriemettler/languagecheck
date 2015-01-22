@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
 
   def index
     @answers = Answer.all
+      authorize @answers
   end
 
   def show
@@ -11,15 +12,19 @@ class AnswersController < ApplicationController
 
   def new
     @answer = Answer.new
+        authorize @answer
   end
 
   def edit
+
+    
   end
 
   def create
     @answer = Answer.new(answer_params)
     @answer.question = @question
     @answer.user = current_user
+      authorize @answer
 
     respond_to do |format|
       if @answer.save

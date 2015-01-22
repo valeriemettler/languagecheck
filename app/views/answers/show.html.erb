@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+  <%= render "votes/voter" %>
+
+<div>
+     <h3> 
+      <%= pluralize(@answer.points, 'point') %>
+     </h3>
+     <small>
+       <%= pluralize(@answer.up_votes, 'up vote') %>
+       
+       <%= pluralize(@answer.down_votes, 'down vote') %>
+   </small>
+</div> 
+    
+<% if policy(Answer.new).create? %> 
 <p>
   <strong>Body:</strong>
   <%= @answer.body %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |
 <%= link_to 'Back', answers_path %>

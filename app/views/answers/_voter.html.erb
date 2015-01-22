@@ -3,7 +3,7 @@
   <div class="vote-arrows pull-left">
     <div>
       <%= link_to " ", 
-        language_question_up_vote_path(@language, @question, answer), 
+        post_up_vote_path(answer), 
         class: "glyphicon glyphicon-chevron-up #{(current_user.voted(answer) && current_user.voted(answer).up_vote?) ? 'voted' : '' }", method: :post %>
     </div>
 
@@ -13,7 +13,7 @@
     
     <div>
       <%= link_to " ", 
-        language_question_down_vote_path(@language, @question, answer), 
+        post_down_vote_path(answer), 
         class: "glyphicon glyphicon-chevron-down #{(current_user.voted(answer) && current_user.voted(answer).down_vote?) ? 'voted' : '' }" , method: :post%>
     </div>
   </div>

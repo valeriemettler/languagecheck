@@ -4,7 +4,7 @@
 
 https://github.com/valeriemettler/languagecheck.git
 
-I started this project with my mentor, Chris Beck, at Bloc (http://bloc.io), but now I'm working on finishing it up on my own! 
+This was my capstone project for my Full Stack Web Development course at Bloc (http://bloc.io).s
 
 Ruby version 2.0.0 
 

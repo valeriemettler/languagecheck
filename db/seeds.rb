@@ -50,9 +50,9 @@ questions = Question.all
   question: questions.sample,
   body:   Faker::Lorem.sentence
   )
-  # set the created_at to a time within the past year
-  # question.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
-  # question.update_rank
+  #set the created_at to a time within the past year
+  answer.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+  answer.update_rank
 end
 answers = Answer.all
 

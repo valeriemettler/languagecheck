@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-8">
- 
+
     <p><%= @question.body %></p>
        <small>
        <%= image_tag(@question.user.avatar.tiny.url) if @question.user.avatar? %>
@@ -21,18 +21,18 @@
 <h3>Answers</h3>
     <% @question.answers.each do |answer| %>
 
-<%#= render partial: 'votes/voter', locals: { answer: @answer } %>
+<!--   <%= render partial: 'votes/voter', locals: { answer: @answer } %>
 
-<!-- <div>
-     <h3> -->
-      <%#= pluralize(@answer.points, 'point') %>
-    <!--  </h3>
-     <small> -->
-       <%#= pluralize(@answer.up_votes, 'up vote') %>
+<div>
+     <h3> 
+      <%= pluralize(@answer.points, 'point') %>
+     </h3>
+     <small>
+       <%= pluralize(@answer.up_votes, 'up vote') %>
        
-       <%#= pluralize(@answer.down_votes, 'down vote') %>
-  <!--    </small>
-   </div> -->
+       <%= pluralize(@answer.down_votes, 'down vote') %>
+   </small>
+   </div>  -->
 
 
       <%= simple_format answer.body %>
@@ -42,7 +42,11 @@
        <%= answer.user.name %>
      </small>
     <% end %>
+    
     <br/>
-<h4>Add an Answer</h4>
-<%= render "answers/form" %>
+
+<% if policy(Answer.new).create? %> 
+  <h4>Add an Answer</h4>
+  <%= render "answers/form" %>
+<% end %>
 
