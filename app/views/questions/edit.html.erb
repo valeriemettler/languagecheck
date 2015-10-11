@@ -1,34 +1,33 @@
-<h1>Edit Question</h1>
-
- <div class="row">
-   <div class="col-md-4">
-     <p>Guidelines for Questions</p>
-   <ul>
-     <li>160 character limit per question.</li>
-     <li>Use your keyboard to make character symbols.</li>
-   </ul>
-   </div>
-   <div class="col-md-8">
-
+<div class="wrapper">
+  <h1>Edit Question</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <p>Guidelines for Questions</p>
+      <ul>
+        <li>160 character limit per question.</li>
+        <li>Use your keyboard to make character symbols.</li>
+      </ul>
+    </div>
+    <div class="col-md-8">
       <%= form_for [@language, @question] do |f| %>
-        <% if @question.errors.any? %>
-          <div class="alert alert-danger">
-            <h4>There are <%= pluralize(@question.errors.count, "error") %>.</h4>
-            <ul>
-              <% @question.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        <%= form_group_tag(@question.errors[:body]) do %>
-          <%= f.label :body %>
-          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question here" %>
-        <% end %>
-        <div class="form-group">
-          <%= f.submit "Save", class: 'btn btn-success' %>
-        </div>
+      <% if @question.errors.any? %>
+      <div class="alert alert-danger">
+        <h4>There are <%= pluralize(@question.errors.count, "error") %>.</h4>
+        <ul>
+          <% @question.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-
-   </div>
- </div>
+      <%= form_group_tag(@question.errors[:body]) do %>
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question here" %>
+      <% end %>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-default' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

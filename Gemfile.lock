@@ -105,6 +105,8 @@ GEM
     fog-softlayer (0.3.11)
       fog-core
       fog-json
+    font-awesome-rails (4.0.3.2)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     hike (1.2.3)
     i18n (0.6.11)
@@ -244,6 +246,7 @@ DEPENDENCIES
   faker
   figaro
   fog
+  font-awesome-rails (~> 4.0.3.2)
   jbuilder (~> 1.2)
   jquery-rails
   mini_magick

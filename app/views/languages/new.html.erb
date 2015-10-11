@@ -1,28 +1,23 @@
-
-<% if @language.errors.any? %>
-    <div class="alert alert-danger">
-      <h4>Please fix <%= pluralize(@language.errors.count, "error") %>.</h4>
-      <ul>
-        <% @language.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="wrapper">
+  <% if @language.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>Please fix <%= pluralize(@language.errors.count, "error") %>.</h4>
+    <ul>
+      <% @language.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
-
-<h1>Add a Language</h1>
-
- <div class="col-md-4">
+  <h1>Add a Language</h1>
+  <div class="col-md-4">
     <%= form_for @language do |f| %>
-      <div class="form-group">
-        <% f.label :name %>
-        <%= f.text_field :name, class: 'form-control', placeholder: "Enter language name here" %>
-      </div>
-
-
-
-
-      <%= f.submit "Save", class: 'btn btn-success' %>
+    <div class="form-group">
+      <% f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "New language" %>
+    </div>
+    <%= f.submit "Save", class: 'btn btn-default' %>
     <% end %>
   </div>
+</div>
 </div>

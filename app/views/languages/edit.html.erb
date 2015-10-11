@@ -1,12 +1,11 @@
 <h1>Edit a Language</h1>
-
- <div class="col-md-4">
+<div class="col-md-4">
     <%= form_for @language do |f| %>
-      <div class="form-group">
+    <div class="form-group">
         <% f.label :name %>
         <%= f.text_field :name, class: 'form-control', placeholder: "Enter language name here" %>
-      </div>
-      <%= f.submit "Save", class: 'btn btn-success' %>
+    </div>
+    <%= f.submit "Save", class: 'btn btn-default' %>
     <% end %>
-  </div>
+</div>
 </div>

@@ -1,27 +1,27 @@
-
-<h1>Questions about <%= @language.name %></h1>
-
-<div>
-<% if policy(@language).create? %>
-  <%= link_to "Ask a New Question", new_language_question_path(@language), class: 'btn btn-success' %>
-<% end %>
-</div>
-<br/>
-<div class="row">
-  <div class="col-md-8">
-    <% @questions.each do |question| %>
+<div class="wrapper">
+  <h1>Questions about <%= @language.name %></h1>
+  <div>
+    <% if policy(@language).create? %>
+    <%= link_to "Ask a New Question", new_language_question_path(@language), class: 'btn btn-default' %>
+    <% end %>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-8">
+      <% @questions.each do |question| %>
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <%= link_to question.body, [@language, question] %>
+          <%= link_to question.body, [@language, question] %>
           </h4>
           <small>
-             <%= image_tag(question.user.avatar.tiny.url) if question.user.avatar? %>
-             submitted <%= time_ago_in_words(question.created_at) %> ago by
-             <%= question.user.name %><br/>
-             <%= question.answers.count %> Answers
-           </small>
+          <%= image_tag(question.user.avatar.tiny.url) if question.user.avatar? %>
+          submitted <%= time_ago_in_words(question.created_at) %> ago by
+          <%= question.user.name %><br/>
+          <%= question.answers.count %> Answers
+          </small>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>

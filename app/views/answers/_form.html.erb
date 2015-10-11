@@ -1,20 +1,18 @@
 <%= form_for [@language, @question, @answer] do |f| %>
-    <div class="field">
-      <%= f.text_area :body %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+<div class="field">
+  <%= f.text_area :body %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>
-
 <% if @answer.errors.any? %>
-    <div id="error_explanation">
-      <h2>Please fix<%= pluralize(@answer.errors.count, "error") %></h2>
-      <ul>
-      <% @answer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<div id="error_explanation">
+  <h2>Please fix<%= pluralize(@answer.errors.count, "error") %></h2>
+  <ul>
+    <% @answer.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
