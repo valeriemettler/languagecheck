@@ -13,7 +13,6 @@
       <% end %></div>
     </div>
     <div class="col-md-4">
-      <%#= link_to "Answer", new_language_question_answer_path(@language, @question), class: 'btn btn-success' %>
     </div>
   </div>
   <br/>
@@ -23,16 +22,7 @@
         <% end %>
 
   <% @question.answers.each do |answer| %>
-  <!--   <%= render partial: 'votes/voter', locals: { answer: @answer } %>
-  <div>
-    <h3>
-    <%= pluralize(@answer.points, 'point') %>
-    </h3>
-    <small>
-    <%= pluralize(@answer.up_votes, 'up vote') %>
-    <%= pluralize(@answer.down_votes, 'down vote') %>
-    </small>
-  </div>  -->
+
   <%= simple_format answer.body %>
   <small>
   <%= image_tag(answer.user.avatar.tiny.url) if answer.user.avatar? %>

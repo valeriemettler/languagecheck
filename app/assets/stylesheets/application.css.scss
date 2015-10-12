@@ -8,7 +8,12 @@
     padding: 10px 16px;
     margin-top: 5px;
 }
-
+.field_with_errors {
+    background-color: transparent !important;
+}
+.alert-danger {
+    max-width: 400px !important;
+}
 .navbar-default .navbar-nav > li > a {
     color: #fff;
 }

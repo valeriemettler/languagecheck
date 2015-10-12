@@ -24,24 +24,6 @@
         <% end %>
         <%= render @questions_i_answered %>
       </div>
-<!--       <div>
-        <h3>My Answers Voted Up</h3>
-        <% if @answers_voted_up.blank? %>
-        <small>You haven't had any questions voted up yet</small>
-        <% end %>
-        <% @answers_voted_up.each do |answer| %>
-        <div class="media">
-          <div class="media-body">
-            <h4 class="media-heading">
-            <p><%= answer.body %></p>
-            </h4>
-            <small>
-            <%= link_to "View question", answer.question %>
-            </small>
-          </div>
-        </div>
-        <% end %>
-      </div> -->
     </div>
   </div>
 </div>
