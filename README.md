@@ -1,4 +1,6 @@
-# LanguageCheck:  Get help and help others with short language translations!
+# LanguageCheck
+
+Get help and help others with short language translations!
 
 Link to live app at [languagecheck.herokuapp.com](http://languagecheck.herokuapp.com/)
 
