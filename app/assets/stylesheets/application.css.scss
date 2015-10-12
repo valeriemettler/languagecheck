@@ -18,6 +18,7 @@
     text-align: center;
 }
 
+
 /**/
 #langstar {
     margin: 25px 1px !important;
@@ -53,6 +54,10 @@ header .container {
 .wrapper {
     margin: 31px 0px 0px 60px;
 }
+.wrapper2{
+    width: 1066px;
+    margin: auto;
+}
 .navbar {
     margin-bottom: 0px;
 }
@@ -83,11 +88,11 @@ p.small {
     font-size: 16px;
 }
 a {
-    color: #333;
+    color: #369;
 }
 a:hover, a:focus, a:active, a.active {
     outline: 0;
-    color: #333;
+    color: #369;
     text-decoration: none !important;
     background: none;
 }
@@ -100,10 +105,20 @@ h1, h2, h3 {
     color: #333;
     text-transform: none;
 }
-h4 a, a:visited {
-    color: #333;
+h4 a{
+    color: #369;
     text-transform: none;
 }
+
+h4 a:visited {
+    color: #551a8b;
+    text-transform: none;
+}
+
+.btn:visited   {
+    color: #333 !important;
+}
+
 .media-heading a {
     font-weight: 100;
 }

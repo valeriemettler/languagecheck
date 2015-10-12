@@ -1,9 +1,13 @@
 <%= form_for [@language, @question, @answer] do |f| %>
+<!-- <%= @language %>  -->
+<!-- <%= @question %>  -->
+<!-- <%= @answer %> -->
+<!-- <%= f  %> -->
 <div class="field">
   <%= f.text_area :body %>
 </div>
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit "Add Answer", class: "btn btn-default" %>
 </div>
 <% end %>
 <% if @answer.errors.any? %>

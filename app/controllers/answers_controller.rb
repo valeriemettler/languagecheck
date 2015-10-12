@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
 
   def edit
 
-    
+
   end
 
   def create
@@ -58,7 +58,7 @@ class AnswersController < ApplicationController
   end
 
   private
-  
+
     def set_answer
       @answer = Answer.find(params[:id])
       @answer ||= @question.answers.new
