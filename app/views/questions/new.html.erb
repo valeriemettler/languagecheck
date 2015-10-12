@@ -24,15 +24,16 @@
         <br>
         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter question here" %>
         <% unless @language %>
-        <label>Select language or create a new one</label>
+        <label>Select a language to ask a question</label>
         <%= select_tag "language_id", options_from_collection_for_select(Language.all, "id", "name") %>
-        <%= link_to "New language", new_language_path %>
+        <% end %>
+        <label>or add a new language:</label>
+        <span id="new"><%= link_to "New Language", new_language_path %><span>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Submit Question", class: 'btn btn-default' %>
+        </div>
         <% end %>
       </div>
-      <div class="form-group">
-        <%= f.submit "Save", class: 'btn btn-default' %>
-      </div>
-      <% end %>
     </div>
   </div>
-</div>
