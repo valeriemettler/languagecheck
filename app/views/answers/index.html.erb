@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% if policy(Answer.new).create? %>
-    <%= link_to "New Answer", new_answer_path, class: 'btn btn-default' %>
+    <%= link_to "New Answer", new_answer_path, class: 'btn btn-success' %>
     <% end %>
     <% @answers.each do |answer| %>
     <tr>

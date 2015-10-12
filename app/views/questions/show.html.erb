@@ -9,7 +9,7 @@
       <%= @question.user.name %>
       </small>
       <div><% if policy(@question).edit? %>
-        <%= link_to "Edit Question", edit_language_question_path(@language, @question), class: 'btn btn-default' %>
+        <%= link_to "Edit Question", edit_language_question_path(@language, @question), class: 'btn btn-success' %>
       <% end %></div>
     </div>
     <div class="col-md-4">
@@ -18,6 +18,10 @@
   </div>
   <br/>
   <h3>Answers</h3>
+  <% if @question.answers.blank? %>
+        <small>No one has answered yet.</small>
+        <% end %>
+
   <% @question.answers.each do |answer| %>
   <!--   <%= render partial: 'votes/voter', locals: { answer: @answer } %>
   <div>
@@ -38,7 +42,7 @@
   <% end %>
   <br/>
   <% if policy(Answer.new).create? %>
-  <h4>Add an Answer</h4>
+  <h4 class="add-answer">Add an Answer</h4>
   <%= render "answers/form" %>
   <% end %>
 </div>
