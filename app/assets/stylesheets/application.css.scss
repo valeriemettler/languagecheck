@@ -96,7 +96,7 @@ header .container {
     padding-top: 50px;
 }
 #question_body {
-    width: 90%;
+    max-width: 90%;
 }
 #user_email, #user_password, #user_password_confirmation, #user_current_password, #user_name {
     width: 50%;
