@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+html, body, header {
+    margin: 0 !important;
+    height: 100%;
+}
 .nav > li > a {
     position: relative;
     display: block;
@@ -87,14 +91,7 @@ small img {
 .navbar {
     border-radius: 0px;
 }
-header .container {
 
-    /**/
-    min-height: 700px;
-    height: auto !important;
-    height: 700px;
-    padding-top: 50px;
-}
 #question_body {
     max-width: 90%;
 }
